@@ -1,0 +1,1798 @@
+{
+	"info": {
+		"_postman_id": "51224172-a6ca-4d58-bcdf-94e5b1865dc0",
+		"name": "MB7-API-3 Destructive Test Cases",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Initialisation: new Admin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"pm.collectionVariables.set(\"newAdminID\", jsonData.Data.Id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content",
+						"value": "application/x-www-form-urlencoded",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{adminpass}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "testadmin3",
+							"type": "default"
+						},
+						{
+							"key": "first_name",
+							"value": "Test",
+							"type": "default"
+						},
+						{
+							"key": "last_name",
+							"value": "Admin",
+							"type": "default"
+						},
+						{
+							"key": "email",
+							"value": "admin@test.com",
+							"type": "default"
+						},
+						{
+							"key": "phone_number",
+							"value": "123456789",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "Password1!",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{MrBuggy7}}/user/admin",
+					"host": [
+						"{{MrBuggy7}}"
+					],
+					"path": [
+						"user",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Initialisation: new Employee",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"pm.collectionVariables.set(\"newEmployeeID\", jsonData.Data.Id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content",
+						"value": "application/x-www-form-urlencoded",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{adminpass}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "testemployee",
+							"type": "default"
+						},
+						{
+							"key": "first_name",
+							"value": "Test",
+							"type": "default"
+						},
+						{
+							"key": "last_name",
+							"value": "Employee",
+							"type": "default"
+						},
+						{
+							"key": "email",
+							"value": "employee@test.com",
+							"type": "default"
+						},
+						{
+							"key": "phone_number",
+							"value": "123456789",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "Password1!",
+							"type": "default"
+						},
+						{
+							"key": "unit_id",
+							"value": "1",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{MrBuggy7}}/user/employee",
+					"host": [
+						"{{MrBuggy7}}"
+					],
+					"path": [
+						"user",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Initialisation: new Provider (user)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"pm.collectionVariables.set(\"newProviderID\", jsonData.Data.Id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content",
+						"value": "application/x-www-form-urlencoded",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{adminpass}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "testprovider",
+							"type": "default"
+						},
+						{
+							"key": "first_name",
+							"value": "Test",
+							"type": "default"
+						},
+						{
+							"key": "last_name",
+							"value": "Provider",
+							"type": "default"
+						},
+						{
+							"key": "email",
+							"value": "provider@test.com",
+							"type": "default"
+						},
+						{
+							"key": "phone_number",
+							"value": "123456789",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "Password1!",
+							"type": "default"
+						},
+						{
+							"key": "provider_id",
+							"value": "1",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{MrBuggy7}}/user/provider",
+					"host": [
+						"{{MrBuggy7}}"
+					],
+					"path": [
+						"user",
+						"provider"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MB7-C35 /user HEAD",
+			"request": {
+				"method": "HEAD",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content",
+						"value": "application/x-www-form-urlencoded",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{adminpass}}",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{MrBuggy7}}/user",
+					"host": [
+						"{{MrBuggy7}}"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MB7-C36 /user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content",
+						"value": "application/x-www-form-urlencoded",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{adminpass}}",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{MrBuggy7}}/user",
+					"host": [
+						"{{MrBuggy7}}"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MB7-C37 /user/admin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content",
+						"value": "application/x-www-form-urlencoded",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{adminpass}}",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "testadmin",
+							"type": "default"
+						},
+						{
+							"key": "first_name",
+							"value": "Test",
+							"type": "default"
+						},
+						{
+							"key": "last_name",
+							"value": "Admin",
+							"type": "default"
+						},
+						{
+							"key": "email",
+							"value": "admin@test.com",
+							"type": "default"
+						},
+						{
+							"key": "phone_number",
+							"value": "123456789",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "Password1!",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{MrBuggy7}}/user/admin",
+					"host": [
+						"{{MrBuggy7}}"
+					],
+					"path": [
+						"user",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MB7-C38 /user/ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content",
+						"value": "application/x-www-form-urlencoded",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{adminpass}}",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "testadmin",
+							"type": "default"
+						},
+						{
+							"key": "first_name",
+							"value": "Test",
+							"type": "default"
+						},
+						{
+							"key": "last_name",
+							"value": "Admin",
+							"type": "default"
+						},
+						{
+							"key": "email",
+							"value": "admin@test.com",
+							"type": "default"
+						},
+						{
+							"key": "phone_number",
+							"value": "123456789",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "Password1!",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{MrBuggy7}}/user/{{newAdminID}}",
+					"host": [
+						"{{MrBuggy7}}"
+					],
+					"path": [
+						"user",
+						"{{newAdminID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MB7-C39 /user/ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content",
+						"value": "application/x-www-form-urlencoded",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{adminpass}}",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{MrBuggy7}}/user/{{newAdminID}}",
+					"host": [
+						"{{MrBuggy7}}"
+					],
+					"path": [
+						"user",
+						"{{newAdminID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MB7-C40 /user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content",
+						"value": "application/x-www-form-urlencoded",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{adminpass}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{MrBuggy7}}/user",
+					"host": [
+						"{{MrBuggy7}}"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MB7-C41 /user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content",
+						"value": "application/x-www-form-urlencoded",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{adminpass}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{MrBuggy7}}/user",
+					"host": [
+						"{{MrBuggy7}}"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MB7-C42 /user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content",
+						"value": "application/x-www-form-urlencoded",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{adminpass}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{MrBuggy7}}/user",
+					"host": [
+						"{{MrBuggy7}}"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MB7-C43 /user/profile",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content",
+						"value": "application/x-www-form-urlencoded",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{adminpass}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{MrBuggy7}}/user/profile",
+					"host": [
+						"{{MrBuggy7}}"
+					],
+					"path": [
+						"user",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MB7-C44 /user/profile",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content",
+						"value": "application/x-www-form-urlencoded",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{adminpass}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{MrBuggy7}}/user/profile",
+					"host": [
+						"{{MrBuggy7}}"
+					],
+					"path": [
+						"user",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MB7-C45 /user/ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content",
+						"value": "application/x-www-form-urlencoded",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{adminpass}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{MrBuggy7}}/user/{{newAdminID}}",
+					"host": [
+						"{{MrBuggy7}}"
+					],
+					"path": [
+						"user",
+						"{{newAdminID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MB7-C46 /user/admin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content",
+						"value": "application/x-www-form-urlencoded",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{adminpass}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{MrBuggy7}}/user/admin",
+					"host": [
+						"{{MrBuggy7}}"
+					],
+					"path": [
+						"user",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MB7-C47 /user/admin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content",
+						"value": "application/x-www-form-urlencoded",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{adminpass}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{MrBuggy7}}/user/admin",
+					"host": [
+						"{{MrBuggy7}}"
+					],
+					"path": [
+						"user",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MB7-C48 /user/admin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content",
+						"value": "application/x-www-form-urlencoded",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{adminpass}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{MrBuggy7}}/user/admin",
+					"host": [
+						"{{MrBuggy7}}"
+					],
+					"path": [
+						"user",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MB7-C49 /user/admin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content",
+						"value": "application/x-www-form-urlencoded",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "dGVzdGVtcGxveWVl:UGFzc3dvcmQxIQ==",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{MrBuggy7}}/user/admin",
+					"host": [
+						"{{MrBuggy7}}"
+					],
+					"path": [
+						"user",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MB7-C50 /user/employee",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content",
+						"value": "application/x-www-form-urlencoded",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "dGVzdGVtcGxveWVl:UGFzc3dvcmQxIQ==",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{MrBuggy7}}/user/employee",
+					"host": [
+						"{{MrBuggy7}}"
+					],
+					"path": [
+						"user",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MB7-C51 /user/provider",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content",
+						"value": "application/x-www-form-urlencoded",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "dGVzdGVtcGxveWVl:UGFzc3dvcmQxIQ==",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{MrBuggy7}}/user/provider",
+					"host": [
+						"{{MrBuggy7}}"
+					],
+					"path": [
+						"user",
+						"provider"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MB7-C52 /user/ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content",
+						"value": "application/x-www-form-urlencoded",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "dGVzdGVtcGxveWVl:UGFzc3dvcmQxIQ==",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{MrBuggy7}}/user/1",
+					"host": [
+						"{{MrBuggy7}}"
+					],
+					"path": [
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MB7-C53 /user/ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content",
+						"value": "application/x-www-form-urlencoded",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "dGVzdGVtcGxveWVl:UGFzc3dvcmQxIQ==",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{MrBuggy7}}/user/1",
+					"host": [
+						"{{MrBuggy7}}"
+					],
+					"path": [
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MB7-C54 /user/admin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content",
+						"value": "application/x-www-form-urlencoded",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "dGVzdHByb3ZpZGVy:UGFzc3dvcmQxIQ==",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{MrBuggy7}}/user/admin",
+					"host": [
+						"{{MrBuggy7}}"
+					],
+					"path": [
+						"user",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MB7-C55 /user/employee",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content",
+						"value": "application/x-www-form-urlencoded",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "dGVzdHByb3ZpZGVy:UGFzc3dvcmQxIQ==",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{MrBuggy7}}/user/employee",
+					"host": [
+						"{{MrBuggy7}}"
+					],
+					"path": [
+						"user",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MB7-C56 /user/provider",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content",
+						"value": "application/x-www-form-urlencoded",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "dGVzdHByb3ZpZGVy:UGFzc3dvcmQxIQ==",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{MrBuggy7}}/user/provider",
+					"host": [
+						"{{MrBuggy7}}"
+					],
+					"path": [
+						"user",
+						"provider"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MB7-C57 /user/ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content",
+						"value": "application/x-www-form-urlencoded",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "dGVzdHByb3ZpZGVy:UGFzc3dvcmQxIQ==",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{MrBuggy7}}/user/1",
+					"host": [
+						"{{MrBuggy7}}"
+					],
+					"path": [
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MB7-C58 /user/ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content",
+						"value": "application/x-www-form-urlencoded",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "dGVzdHByb3ZpZGVy:UGFzc3dvcmQxIQ==",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{MrBuggy7}}/user/1",
+					"host": [
+						"{{MrBuggy7}}"
+					],
+					"path": [
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MB7-C59 /user/ID/block",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content",
+						"value": "application/x-www-form-urlencoded",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "dGVzdGVtcGxveWVl:UGFzc3dvcmQxIQ==",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{MrBuggy7}}/user/{{newAdminID}}/block",
+					"host": [
+						"{{MrBuggy7}}"
+					],
+					"path": [
+						"user",
+						"{{newAdminID}}",
+						"block"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MB7-C60 /user/ID/active",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content",
+						"value": "application/x-www-form-urlencoded",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "dGVzdGVtcGxveWVl:UGFzc3dvcmQxIQ==",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{MrBuggy7}}/user/{{newAdminID}}/active",
+					"host": [
+						"{{MrBuggy7}}"
+					],
+					"path": [
+						"user",
+						"{{newAdminID}}",
+						"active"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MB7-C61 /user/ID/block",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content",
+						"value": "application/x-www-form-urlencoded",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "dGVzdHByb3ZpZGVy:UGFzc3dvcmQxIQ==",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{MrBuggy7}}/user/{{newAdminID}}/block",
+					"host": [
+						"{{MrBuggy7}}"
+					],
+					"path": [
+						"user",
+						"{{newAdminID}}",
+						"block"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MB7-C62 /user/ID/active",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content",
+						"value": "application/x-www-form-urlencoded",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "dGVzdHByb3ZpZGVy:UGFzc3dvcmQxIQ==",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{MrBuggy7}}/user/{{newAdminID}}/active",
+					"host": [
+						"{{MrBuggy7}}"
+					],
+					"path": [
+						"user",
+						"{{newAdminID}}",
+						"active"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MB7-C63 /user/ID/block",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content",
+						"value": "application/x-www-form-urlencoded",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{adminpass}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{MrBuggy7}}/user/1/block",
+					"host": [
+						"{{MrBuggy7}}"
+					],
+					"path": [
+						"user",
+						"1",
+						"block"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MB7-C64 /user/ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Content",
+						"value": "application/x-www-form-urlencoded",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{adminpass}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{MrBuggy7}}/user/1",
+					"host": [
+						"{{MrBuggy7}}"
+					],
+					"path": [
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "adminpass",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "MrBuggy7",
+			"value": "http://localhost:8080",
+			"type": "default"
+		},
+		{
+			"key": "newAdminID",
+			"value": ""
+		},
+		{
+			"key": "newProviderID",
+			"value": ""
+		},
+		{
+			"key": "newEmployeeID",
+			"value": ""
+		},
+		{
+			"key": "newUnitID",
+			"value": ""
+		},
+		{
+			"key": "newProvID",
+			"value": ""
+		}
+	]
+}
